@@ -1,3 +1,7 @@
+![Alt Median ROI per Genre](plots/med_roi_genre.png)
+![Alt Median ROI per Season](plots/med_roi_season.png)
+![Alt Median ROI per Runtime](plots/med_roi_runtime.png)
+
 # Phase-2-Project
 Primary repository for Cinemungers
 
