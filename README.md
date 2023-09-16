@@ -1,3 +1,5 @@
+![Alt Median ROI per Genre](plots/med_roi_genre.png)
+
 # Phase-2-Project
 Primary repository for Cinemungers
 
