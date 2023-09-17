@@ -3,11 +3,11 @@
 ![neon-cinema-projector-sign-vector](https://github.com/kaceyclougher/Phase-2-Project/assets/137820049/0699fcc3-fc08-43d4-8b92-18f548c73b09)
 
 ## Overview
-In this project, we conducted an analysis of thousands of movies to identify the key determinants of profitability. Our investigation delved into various factors, including genre, runtime, season of release, and the director's influence. Using Bayesian statistics, we used these trends to unveil the probability of a movie's success based on these critical factors.
+In this project, we conducted an analysis of thousands of movies to identify the key determinants of profitability. Our investigation looked into various factors, including genre, runtime, season of release, and the director's influence. Using Bayesian statistics, we used these trends to calculate the probability of a movie's success based on these factors.
 
 ## Business Understanding
 
-Our new company is gearing up to step into the cinema and film industry. We want to grasp the core elements that lead to making a profitable film. Our goal is simple: we're looking to understand what it takes to produce a film that's most likely to make money.
+Our new company is looking to enter the cinema and film industry. We were tasked with understanding what it takes to produce a film that's most likely to make money.
 
 ## Data Understanding and Analysis
 
@@ -19,13 +19,13 @@ Our new company is gearing up to step into the cinema and film industry. We want
 
 ### Description of data
 
-Our initial dataset was comprised of over one hundred thousand movies, exhibiting a wide range of data completeness. In light of this variance, we prioritized movies with comprehensive information. Our focused dataset included essential attributes such as title, runtime (in minutes), director, studio, popularity votes, budget, worldwide gross profit, release month/season, and the crucial metric of total Return on Investment (ROI). The ROI was calculated as follows: ROI = (Gross Profit - Budget) / Budget, allowing us to gauge the financial performance of each film. We narrowed our focus exclusively to profitable movies and further refined our dataset by exclusively considering films with a positive ROI. In our analysis, when evaluating ROI alongside each variable, our emphasis was on the median ROI due to its resilience against extreme values or outliers within the dataset.
+Our initial dataset was comprised of over one hundred thousand movies, varying in data completeness. In light of this variance, we prioritized movies with information in our primary features. After data cleaning and research, our final dataset included attributes such as title, runtime (in minutes), director, studio, popularity votes, budget, worldwide gross profit, release month/season, and the crucial metric of total Return on Investment (ROI). The ROI was calculated as follows: ROI = (Gross Profit - Budget) / Budget, allowing us to gauge the financial performance of each film. We narrowed our focus exclusively to profitable movies and further refined our dataset by only considering films with a positive ROI. In our analysis, when evaluating ROI alongside each variable, our emphasis was on the median ROI due to its resilience against extreme values or outliers within the dataset.
 
 We filtered out films with incomplete data, as well as outliers associated with two specific directors. To streamline our analysis, we transformed the genre data into a binary column, effectively quantifying the prevalence of each genre within our dataset. Interestingly, we observed that the majority of movies in our dataset fell under the Drama category. Nevertheless, in the context of ROI, Animation exhibited the most elevated median ROI.
 
 ![Alt Median ROI per Genre](plots/med_roi_genre.png)
 
-Within the dataset, we possessed information regarding each film's release date. We extracted the month from these dates and subsequently categorized the months into seasons as shown below:
+Within the dataset, we pulled information regarding each film's release date. We also extracted the month from these dates and subsequently categorized the months into seasons as shown below:
 
 * Spring: March 1st to May 31st
 * Summer: June 1st to August 31st
@@ -40,7 +40,7 @@ We categorized runtime into established time bins, where films with a duration o
 
 ![Alt Median ROI per Runtime](plots/med_roi_runtime.png)
 
-Our attention was directed towards directors who had more than two films in the dataset, aiming to enhance the consideration of experience while minimizing the influence of outliers on the data. It's noteworthy that the top three directors in our dataset were associated with films primarily in the adventure and family genres. This observation aligns with our genre-related findings.
+We aimed to consider experience and minimize the influence of outliers on the data. Therefore, we only examined directors who had more than two films in the dataset. It's notable that the top three directors in our dataset were associated with films primarily in the adventure and family genres. This observation aligns with our genre-related findings.
 
 <img width="863" alt="Screen Shot 2023-09-17 at 11 53 57 AM" src="https://github.com/kaceyclougher/Phase-2-Project/assets/137820049/c79fb80c-4f73-4003-b3fc-f754ef4e5b1e">
 
