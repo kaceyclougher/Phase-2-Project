@@ -1,32 +1,65 @@
+
+# IMDb Movie Analysis
+![neon-cinema-projector-sign-vector](https://github.com/kaceyclougher/Phase-2-Project/assets/137820049/0699fcc3-fc08-43d4-8b92-18f548c73b09)
+
+## Overview
+In this project, we conducted an analysis of thousands of movies to identify the key determinants of profitability. Our investigation delved into various factors, including genre, runtime, season of release, and the director's influence. Using Bayesian statistics, we used these trends to unveil the probability of a movie's success based on these critical factors.
+
+## Business Understanding
+
+Our new company is gearing up to step into the cinema and film industry. We want to grasp the core elements that lead to making a profitable film. Our goal is simple: we're looking to understand what it takes to produce a film that's most likely to make money.
+
+## Data Understanding and Analysis
+
+### Sources of data present in the data folder: 
+
+* [Box Office Mojo] (https://www.boxofficemojo.com/)
+* [IMDB] (https://www.imdb.com/)
+* [The Numbers] (https://www.the-numbers.com/)
+
+### Description of data
+
+Our initial dataset was comprised of over one hundred thousand movies, exhibiting a wide range of data completeness. In light of this variance, we prioritized movies with comprehensive information. Our focused dataset included essential attributes such as title, runtime (in minutes), director, studio, popularity votes, budget, worldwide gross profit, release month/season, and the crucial metric of total Return on Investment (ROI). The ROI was calculated as follows: ROI = (Gross Profit - Budget) / Budget, allowing us to gauge the financial performance of each film. We narrowed our focus exclusively to profitable movies and further refined our dataset by exclusively considering films with a positive ROI. In our analysis, when evaluating ROI alongside each variable, our emphasis was on the median ROI due to its resilience against extreme values or outliers within the dataset.
+
+We filtered out films with incomplete data, as well as outliers associated with two specific directors. To streamline our analysis, we transformed the genre data into a binary column, effectively quantifying the prevalence of each genre within our dataset. Interestingly, we observed that the majority of movies in our dataset fell under the Drama category. Nevertheless, in the context of ROI, Animation exhibited the most elevated median ROI.
+
 ![Alt Median ROI per Genre](plots/med_roi_genre.png)
+
+Within the dataset, we possessed information regarding each film's release date. We extracted the month from these dates and subsequently categorized the months into seasons as shown below:
+
+* Spring: March 1st to May 31st
+* Summer: June 1st to August 31st
+* Autumn: September 1st to November 30th
+* Winter: December 1st to February 28th
+
+We noted the highest median ROI during the summer season. This is likely attributed to the trend of summer blockbusters, potentially stemming from the increased free time people tend to have during the summer months.
+
 ![Alt Median ROI per Season](plots/med_roi_season.png)
+
+We categorized runtime into established time bins, where films with a duration of less than 40 minutes were classified as short films, those between 41 and 150 minutes fell within the average film length range, and films exceeding 150 minutes were deemed long films. Notably, long films consistently demonstrated a notably higher ROI.
+
 ![Alt Median ROI per Runtime](plots/med_roi_runtime.png)
 
-# Phase-2-Project
-Primary repository for Cinemungers
+Our attention was directed towards directors who had more than two films in the dataset, aiming to enhance the consideration of experience while minimizing the influence of outliers on the data. It's noteworthy that the top three directors in our dataset were associated with films primarily in the adventure and family genres. This observation aligns with our genre-related findings.
 
-## Project Overview
-For this project, you will use data cleaning, imputation, analysis, and visualization to generate insights for a business stakeholder.
+<img width="863" alt="Screen Shot 2023-09-17 at 11 53 57 AM" src="https://github.com/kaceyclougher/Phase-2-Project/assets/137820049/c79fb80c-4f73-4003-b3fc-f754ef4e5b1e">
 
-## Business Problem
-Your company is expanding in to new industries to diversify its portfolio. Specifically, they are interested in purchasing and operating airplanes for commercial and private enterprises, but do not know anything about the potential risks of aircraft. You are charged with determining which aircraft are the lowest risk for the company to start this new business endeavor. You must then translate your findings into actionable insights that the head of the new aviation division can use to help decide which aircraft to purchase.
+Finally, we used Bayesian statistics to compute the probability of achieving a positive ROI (indicating a profitable movie) for each genre, director, runtime category, and season. The comprehensive results can be referenced in the accompanying Jupyter notebook. Here are some of the most noteworthy findings:
 
-## The Data
-In the data folder is a datasetLinks to an external site. from the National Transportation Safety Board that includes aviation accident data from 1962 to 2023 about civil aviation accidents and selected incidents in the United States and international waters.
+**Season**
+Summer: 71.0% probability of a positive ROI
 
-It is up to you to decide what data to use, how to deal with missing values, how to aggregate the data, and how to visualize it in an interactive dashboard.
+**Director**
+Jon Favreau: 50.5% probability of a positive ROI
 
-## Key Points
-Your analysis should yield three concrete business recommendations. The key idea behind dealing with missing values, aggregating and visualizaing data is to help your organization make data driven decisions. You will relate your findings to business intelligence by making recommendations for how the business should move forward with the new aviation opportunity.
+**Genre**
+Animation: 87.0% probability of a positive ROI
 
-Communicating about your work well is extremely important. Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of the aviation division) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
+**Runtime**
+Movie Length > 150 Minutes: 75.0% probability of a positive ROI
 
-Use plenty of visualizations. Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
- 
-## Deliverables
-There are three deliverables for this project:
+For the complete results and detailed insights, please refer to the provided Jupyter notebook. 
 
-A non-technical presentation
-A Jupyter Notebook
-A GitHub repository
-An Interactive Dashboard
+
+## Conclusion
+Our recommendation for the new company is to concentrate on producing an extended-length animation film with a notable director, such as Jon Favreau. We also suggest scheduling its release during the summer months. Our analysis shows the summer season as particularly lucrative for movie releases, fueled by the trend of summer blockbusters. Our findings emphasize that longer films consistently generate higher ROIs, while top-performing directors tend to gravitate towards adventure and family genres. Notably, animation emerges as the genre with the highest probability of delivering a profitable movie.
