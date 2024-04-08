@@ -13,9 +13,9 @@ Our new company is looking to enter the cinema and film industry. We were tasked
 
 ### Sources of data present in the data folder: 
 
-* [Box Office Mojo] (https://www.boxofficemojo.com/)
-* [IMDB] (https://www.imdb.com/)
-* [The Numbers] (https://www.the-numbers.com/)
+* [Box Office Mojo](https://www.boxofficemojo.com/)
+* [IMDB](https://www.imdb.com/)
+* [The Numbers](https://www.the-numbers.com/)
 
 ### Description of data
 
